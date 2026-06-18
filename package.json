@@ -1,0 +1,70 @@
+{
+  "name": "code-guardian",
+  "version": "0.1.0",
+  "description": "MCP Server for AI code quality checks — file size, ESLint, architecture compliance, anti-patterns, and comment standards",
+  "main": "index.js",
+  "bin": {
+    "code-guardian": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "tools/",
+    "!.code-guardian.json",
+    "!__tests__/"
+  ],
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test __tests__/"
+  },
+  "keywords": [
+    "mcp",
+    "code-guardian",
+    "lint",
+    "architecture",
+    "anti-patterns",
+    "code-quality",
+    "code-review",
+    "ai-assistant",
+    "model-context-protocol",
+    "eslint",
+    "static-analysis",
+    "vue",
+    "javascript"
+  ],
+  "author": "Code Guardian Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/user/code-guardian"
+  },
+  "bugs": {
+    "url": "https://github.com/user/code-guardian/issues"
+  },
+  "homepage": "https://github.com/user/code-guardian#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  },
+  "peerDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-vue": "^9.24.0",
+    "globals": "^15.0.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
+      "optional": true
+    },
+    "@eslint/js": {
+      "optional": true
+    },
+    "globals": {
+      "optional": true
+    }
+  }
+}

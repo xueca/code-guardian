@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "fileSizeLimits": {
+    "**/controllers/**/*.js": 150,
+    "**/routes/**/*.js": 50,
+    "**/middleware/**/*.js": 80,
+    "**/*.vue": 200,
+    "**/*.js": 150
+  },
+  "architecture": {
+    "layers": [
+      {
+        "name": "views",
+        "path": "**/*.vue",
+        "forbidden": ["fetch", "axios", "EventSource"]
+      },
+      {
+        "name": "api",
+        "path": "**/api/**/*.js",
+        "forbiddenImports": ["composables/", "stores/"]
+      },
+      {
+        "name": "composables",
+        "path": "**/composables/**/*.js",
+        "forbiddenImports": ["views/"]
+      },
+      {
+        "name": "backend",
+        "path": "**/controllers/**/*.js",
+        "forbiddenImports": ["views/", "stores/", "composables/"]
+      }
+    ]
+  },
+  "antiPatterns": {
+    "directApiInView": true,
+    "longTransformInView": true,
+    "bareAsync": true,
+    "resourceLeak": true,
+    "moduleLevelState": true,
+    "duplicateCode": true
+  },
+  "eslint": {
+    "configPath": "frontend/eslint.config.js",
+    "frontendDir": "frontend"
+  },
+  "commentStandard": {
+    "fileHeaderRequired": true,
+    "functionCommentRequired": true,
+    "vueTemplateCommentRecommended": true
+  }
+}
